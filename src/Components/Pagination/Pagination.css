@@ -1,0 +1,24 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination-link {
+    padding: 10px 15px;
+    border: 2px solid var(--textcolor);
+    margin: 1px;
+    transition: .5s;
+}
+
+.pagination-link:hover {
+    border: 2px solid var(--special);
+    color: var(--special);
+}
+
+.pagination-link-active {
+    padding: 10px 15px;
+    margin: 1px;
+    border: 2px solid var(--special);
+    color: var(--special);
+}
