@@ -1,0 +1,11 @@
+.preview {
+    border-radius: 20px;
+    padding: 100px 90px;
+    background-color: rgb(17, 17, 17);
+    margin: 1rem;
+    box-shadow: 5px 10px 15px 15px rgba(0, 0, 0, 0.096);
+}
+
+.preview p {
+    margin: 10px;
+}

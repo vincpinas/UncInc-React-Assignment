@@ -22,3 +22,8 @@
     border: 2px solid var(--special);
     color: var(--special);
 }
+
+.pagination button {
+    outline: none;
+    background: none;
+}

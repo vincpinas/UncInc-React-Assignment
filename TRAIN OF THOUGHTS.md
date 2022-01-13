@@ -11,3 +11,6 @@ In place of a row number from a database I used the index of the item in the arr
 I then had to firstly setup a useState to keep track of the current page, had I not done this and use a let variable instead React would not have known to update the component whenever the state of the variable changed.
 
 I then made a map function to go over the array of items in which I made 2 conditional renders, one whenever the current page link includes the slug and one whenever it does not.
+
+# Finishing touches
+After first finishing a simple version of the component I thought about what to do when showing the page with pagination under it. Since both components will make use of the current page and page data. So I decided to move the variables to the top level of the component and create a little preview component.
