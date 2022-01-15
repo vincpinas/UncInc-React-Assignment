@@ -14,7 +14,11 @@ const pages = [
 ]
 
 function App() {
-  const [currentPage, setCurrentPage] = useState({data: {}, href: window.location.href});
+  const findCurrentPageHref = () => pages.findIndex(page => {
+    return window.location.href.includes(page.slug)
+  });
+
+  const [currentPage, setCurrentPage] = useState({data: pages[findCurrentPageHref()], href: window.location.href});
 
   return (
     <>
