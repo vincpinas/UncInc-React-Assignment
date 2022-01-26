@@ -14,16 +14,21 @@ const pages = [
 ]
 
 function App() {
+  const [baselink] = useState(window.location.href.includes('ma-cloud') ? 'http://30472.hosts1.ma-cloud.nl/UncInc/' : 'http://localhost:3000/')
+
   const findCurrentPageHref = () => pages.findIndex(page => {
     return window.location.href.includes(page.slug)
   });
 
-  const [currentPage, setCurrentPage] = useState({data: pages[findCurrentPageHref()], href: window.location.href});
+  const [currentPage, setCurrentPage] = useState({
+      data: findCurrentPageHref() > 0 ? (pages[findCurrentPageHref()]) : pages[0], 
+      href: window.location.href
+    });
 
   return (
     <>
-      <Preview currentPage={currentPage}/>
-      <Pagination pages={pages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <Preview currentPage={currentPage} />
+      <Pagination pages={pages} currentPage={currentPage} setCurrentPage={setCurrentPage} baselink={baselink} />
     </>
   );
 }

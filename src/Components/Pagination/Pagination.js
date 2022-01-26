@@ -8,15 +8,15 @@ function Pagination(props) {
 
     const forward = () => {
         if(findPageIndex() < props.pages.length-1) {
-            props.setCurrentPage({data:{...props.pages[findPageIndex()+1]}, href:`http://localhost:3000/#${props.pages[findPageIndex()+1].slug}`})
-            window.location.href = `http://localhost:3000/#${props.pages[findPageIndex()+1].slug}`
+            props.setCurrentPage({data:{...props.pages[findPageIndex()+1]}, href:`${props.baselink}#${props.pages[findPageIndex()+1].slug}`})
+            window.location.href = `${props.baselink}#${props.pages[findPageIndex()+1].slug}`
         }
     }
 
     const backward = () => {
         if(findPageIndex() > 0) {
-            props.setCurrentPage({data:{...props.pages[findPageIndex()-1]}, href:`http://localhost:3000/#${props.pages[findPageIndex()-1].slug}`})
-            window.location.href = `http://localhost:3000/#${props.pages[findPageIndex()-1].slug}`
+            props.setCurrentPage({data:{...props.pages[findPageIndex()-1]}, href:`${props.baselink}#${props.pages[findPageIndex()-1].slug}`})
+            window.location.href = `${props.baselink}#${props.pages[findPageIndex()-1].slug}`
         }
     }
     return (
@@ -33,7 +33,7 @@ function Pagination(props) {
                 else {
                     return (
                         <a className="pagination-link" href={`#${page.slug}`} key={index} 
-                           onClick={()=>props.setCurrentPage({data:{...page}, href:`http://localhost:3000/#${page.slug}`})}>
+                           onClick={()=>props.setCurrentPage({data:{...page}, href:`${props.baselink}#${page.slug}`})}>
                             {page.id}
                         </a>
                     )
